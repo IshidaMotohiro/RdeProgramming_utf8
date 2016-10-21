@@ -17,16 +17,16 @@ Aozora <- function(x){
     outfile <- file(newFile, 'w', encoding = "utf8")
     flag <- 0;
     while (length(input <- readLines(con, n=1, encoding = "CP932")) > 0){
-      if (grepl("^", input)) break ;
-      if (grepl("", input)) break;
+      if (grepl("^底本", input)) break ;
+      if (grepl("【入力者注】", input)) break;
       if (grepl("^------", input)) {
         flag <- !flag
       next;
       }
       if (!flag){
-        input <- gsub ("[^]*", "", input, perl = TRUE)
-        input <- gsub ("[^]*", "", input, perl = TRUE)
-      input <- gsub ("", "", input, perl = TRUE)
+        input <- gsub ("［＃[^］]*］", "", input, perl = TRUE)
+        input <- gsub ("《[^》]*》", "", input, perl = TRUE)
+      input <- gsub ("｜", "", input, perl = TRUE)
         writeLines(input, con=outfile)
 #      tmp <- tmp +1
 #      if (tmp > 100) stop ("something wrong")

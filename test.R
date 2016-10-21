@@ -1,6 +1,6 @@
 getwd ()
 
-setwd ("D:/data") # Ddata
+setwd ("D:/data") # Dドライブのdataフォルダに移動
 
 1 + 2
 
