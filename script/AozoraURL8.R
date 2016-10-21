@@ -28,16 +28,16 @@ Aozora <- function(url = NULL, txtname  = NULL){
     outfile <- file(newFile, 'w', encoding = "utf8")
     flag <- 0;
     while (length(input <- readLines(con, n=1, encoding = "CP932")) > 0){
-      if (grepl("^底本", input)) break ;
-      if (grepl("【入力者注】", input)) break;
+      if (grepl("^", input)) break ;
+      if (grepl("", input)) break;
       if (grepl("^------", input)) {
         flag <- !flag
       next;
       }
       if (!flag){
-        input <- gsub ("［＃[^］]*］", "", input, perl = TRUE)
-        input <- gsub ("《[^》]*》", "", input, perl = TRUE)
-        input <- gsub ("｜", "", input, perl = TRUE)
+        input <- gsub ("[^]*", "", input, perl = TRUE)
+        input <- gsub ("[^]*", "", input, perl = TRUE)
+        input <- gsub ("", "", input, perl = TRUE)
         writeLines(input, con=outfile)
       }
     }
