@@ -14,7 +14,7 @@ mv  dot.Profile  .Profile
 
 # 第3章ルビを取るプログラム
 
-（１） ダウンロードしたzipファイルを解凍するAozora_Win.R （Windowsユーザー向け）ないし Aozora_UTF8.R （Macユーザー向け）と，
+（１） Aozora_Win.R （Windowsユーザー向け）ないし Aozora_UTF8.R （Macユーザー向け）と，
 （２） 青空文庫のzipダウンロード用URLを指定してダウンロード・解凍・ルビ取り・ファイル名変更を行うAozoraURL.R （Windowsユーザー向け）ないし AozoraURL8.R （Macユーザー向け）
 
 の2種類を用意しました．
@@ -59,18 +59,10 @@ Aozora ("http://www.aozora.gr.jp/cards/000129/files/42375_ruby_18247.zip", "Ouga
 
 # 付録A.2
 本書のスクリプトを Github に公開しています．
-ただし，登録ファイルはShift-JISになっています．
-UTF-8で利用するユーザーは，レポジトリをいったん取り込んだ後，
-フォルダ内の全ファイルをUTF-8に変換した上，念のためRStudioを起動し，
-本書26ページの手順で，プロジェクト全体のコード設定をUTF-8に変更して下さい．
+ただし，登録ファイルは UTF-8 になっています．
+Windows で利用するユーザーは，レポジトリをいったん取り込んだ後，
+フォルダ内の全ファイルを ShiftJis (CP932) に変換した上，念のためRStudioを起動し，
+本書26ページの手順で，プロジェクト全体のコード設定を CP932 に変更して下さい．
 
-なお文字コードの変換方法の一つとして以下を手順を行なって下さい．
-たとえばレポジトリから取り込んだFirstProject01がホームフォルダ（/User/ishida）
-にあるとします．本書のscriptフォルダにある CP932toUTF8.sh をホームフォルダに
-コピーし，以下のように実行します
-
-  cd ~
-  chmod 755 CP932toUTF8.sh
-  ./CP932toUTF8.sh
-
-
+Windows で文字コードを変換するには、たとえば 文字コード変換ツール「KanjiTranslator 1.6」 のようなソフトウェアを使うのが簡単です。
+http://www.kashim.com/kanjitranslator/
