@@ -95,6 +95,7 @@ HairEyeColor
 
 library (MASS)
 
+class(x) <- "xtabs" # オブジェクトの型を指定
 xc <- corresp (x, nf = 4)
 biplot (xc)
 
