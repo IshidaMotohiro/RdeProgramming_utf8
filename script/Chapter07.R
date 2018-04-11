@@ -76,8 +76,9 @@ plot (cars) # プロットを作成
 abline  (cars.lm)
 
 dev.off ()
-
-example (least.squares)
+## install.packages("animation")
+library (animation)
+least.squares ()
 
 ###7.2.1 予測
 

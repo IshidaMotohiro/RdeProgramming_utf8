@@ -61,9 +61,11 @@ plot (1:10, type = "n")
 text (1:10, LETTERS [1:10], col = 1:10, cex = 1:10)
 
 
-##4.3 manipulate パッケージ
+##4.3 manipulate パッケージ"
+## install.packages("manipulation")
+library(manipulate)
 manipulate (plot (1:10, col = myColors),
-            myColors = pickers ("red", "green", "blue"))
+            myColors = picker ("red", "green", "blue"))
 
 manipulate(
   plot (cars, xlim = c (x.min, x.max), type = type, 
@@ -156,7 +158,7 @@ p + geom_bar(stat = "identity") + facet_wrap(~X2)
 ###4.5.3 ヒストグラム
 x <- hist (trees$Height)
 x
-y <- hist (trees$Height, break = c (60, 70, 80, 90))
+y <- hist (trees$Height, breaks = c (60, 70, 80, 90))
 
 nclass.Sturges
 
